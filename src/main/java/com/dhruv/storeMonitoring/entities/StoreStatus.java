@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Table;
 
 /**
  *
@@ -14,15 +15,21 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Table(name = "storeStatus") 
 public class StoreStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String storeId;
-    private LocalDateTime timestampUtc;
+    @Column(name = "store_id")
+    private Long storeId;
+
+    @Column(name = "status")
     private String status;
+    
+    @Column(name = "timestamp_utc")
+    private String timestampUtc;
     // Lombok generates getters, setters, toString, equals, hashCode
 }
 

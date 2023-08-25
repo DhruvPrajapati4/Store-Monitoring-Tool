@@ -4,10 +4,12 @@
  */
 package com.dhruv.storeMonitoring.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 
 /**
@@ -16,13 +18,17 @@ import lombok.Data;
  */
 @Data
 @Entity
+@Table(name = "storeTimezone")
 public class StoreTimezone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String storeId;
-    private String timezoneStr;
+    @Column(name = "store_id")
+    private Long storeId;
+    
+    @Column(name = "timezone")
+    private String timezone;
     // Lombok generates getters, setters, toString, equals, hashCode
 }
