@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Table;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -15,13 +16,11 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "storeStatus") 
+@NoArgsConstructor
+@Table(name = "store_status") 
 public class StoreStatus {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "store_id")
     private Long storeId;
 

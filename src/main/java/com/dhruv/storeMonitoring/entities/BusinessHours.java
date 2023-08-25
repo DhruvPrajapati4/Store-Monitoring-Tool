@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -19,7 +20,8 @@ import lombok.Data;
  */
 @Data
 @Entity
-@Table(name = "businessHours")
+@NoArgsConstructor
+@Table(name = "business_hours")
 public class BusinessHours {
 
     @Id
